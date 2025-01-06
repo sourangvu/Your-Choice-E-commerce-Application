@@ -1,5 +1,5 @@
 import React from "react";
-import AutoplayCarousel from "../../components/user/carousel";
+import AutoplayCarousel from "../../components/user/Carousel";
 import { ProductsPage } from "./ProductsPage";
 
 export const Home = () => {
