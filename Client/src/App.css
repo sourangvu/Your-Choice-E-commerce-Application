@@ -1,0 +1,23 @@
+
+/* App.css */
+@keyframes multicolor {
+    0% {
+      color: #ff0000; /* Red */
+    }
+    25% {
+      color: #ff7f00; /* Orange */
+    }
+    50% {
+      color: #ffff00; /* Yellow */
+    }
+    75% {
+      color: #00ff00; /* Green */
+    }
+    100% {
+      color: #0000ff; /* Blue */
+    }
+  }
+  
+  .animate-multicolor {
+    animation: multicolor 5s infinite;
+  }

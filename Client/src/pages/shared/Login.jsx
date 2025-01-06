@@ -61,12 +61,13 @@ export const Login = ({ role = "user" }) => {
                                 className="input input-bordered"
                                 required
                             />
-                            <label className="label">
-                                <Link to={user.signup_route}>New User ?</Link>
-                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-accent">Login</button>
+                            <h1 className="text-center">or</h1>
+                            <label className="label" class=" text-center text-blue-500 font-semibold hover:underline ml-1">
+                                <Link to={user.signup_route}> New Customer ?</Link>
+                            </label>
                         </div>
                     </form>
                 </div>

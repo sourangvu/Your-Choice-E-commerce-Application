@@ -5,6 +5,7 @@ const cartRouter = require('./cartRouter')
 const reviewRouter = require("./reviewRouter")
 const sellerRouter = require("./sellerRouter")
 const adminRouter = require("./adminRouter")
+const paymentRouter = require("./paymentRouter")
 
 
 
@@ -16,5 +17,6 @@ v1Router.use("/cart", cartRouter)
 v1Router.use("/review", reviewRouter)
 v1Router.use("/seller", sellerRouter)
 v1Router.use("/admin", adminRouter)
+v1Router.use("/payment", paymentRouter)
 
 module.exports = v1Router

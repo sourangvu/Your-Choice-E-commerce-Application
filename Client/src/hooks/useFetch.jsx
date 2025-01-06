@@ -14,7 +14,7 @@ export const  useFetch = (url) =>{
             method:"GET",
             url: url,
           })
-          console.log("products=======",response);
+          console.log("",response);
           setData(response?.data?.data)
           setTimeout(()=>{
               setLoading(false)

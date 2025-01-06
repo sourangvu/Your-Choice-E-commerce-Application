@@ -9,9 +9,14 @@ const register = async (req, res)=>{
     try {
         const {name, email, mobile, password } = req.body
 
+        console.log(req.body)
+
         if (!name || !email || !mobile || !password){
 
            return res.status(400).json({ error : "All fields are required" })
+        }
+        if (!req.file) {
+            return res.status(400).json({ error: "No file uploaded" });
         }
 
         const uploadResult = await cloudinaryInstance.uploader.upload(req.file.path);
@@ -35,6 +40,7 @@ const register = async (req, res)=>{
         {const newUser = new User ({image : uploadResult.url, name, email, mobile, password })}
 
         const savedUser = await newUser.save()
+        console.log(req.file.path)
         
         res.status(200).json({message : "User Created Successfully", data: savedUser })
         
@@ -122,4 +128,14 @@ const userLogout = async (req, res) => {
     }
   };
 
-module.exports = { register, login, userProfile, userLogout}
+
+  const checkUser = async (req, res) => {
+    try {
+        res.status(200).json({ message: "Authorized User" });
+    } catch (error) {
+        console.log(error);
+        res.status(error.status || 500).json({ error: error.message || "Internal server Error" });
+    }
+};
+
+module.exports = { register, login, userProfile, userLogout, checkUser}

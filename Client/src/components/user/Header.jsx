@@ -8,15 +8,14 @@ export const Header = () => {
     <>
     <div className="navbar bg-base">
   <div className="flex-1">
-    <h1 className="btn btn-ghost text-xl">YouR ChoicE</h1>
+    <h1 className="btn btn-ghost text-xl animate-multicolor">Your Choice</h1>
   </div>
   <ul
         tabIndex={0}
         className="flex gap-10 items-center font-semibold p-5  ">
           <Link to= {'/'}>  <li>Home</li>        </Link>
-          <Link to= {'/cart'}>  <li>Cart</li>        </Link>
           <Link to= {'/products'}>  <li>Products</li>    </Link>
-          <Link to= {'/'}>  <li>Account</li>    </Link>
+          <Link to= {'/profile'}>  <li>Account</li>    </Link>
 
           <Darkmode/>
          

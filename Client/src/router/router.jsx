@@ -6,16 +6,22 @@ import { Contact } from "../pages/user/Contact";
 import { ProductsPage } from "../pages/user/ProductsPage";
 import { ProductDetailsPage } from "../pages/user/ProductDetailsPage";
 import { ErrorPage } from "../pages/shared/ErrorPage";
-import { Cart } from "../pages/user/Cart";
 import { Checkout } from "../pages/user/Checkout";
 import { Order } from "../pages/user/Order";
 import { ProfilePage } from "../pages/user/ProfilePage";
 import { Signup } from "../pages/shared/Signup";
 import { Login } from "../pages/shared/Login";
 import { Logout } from "../pages/shared/Logout";
+import { Branding } from "../pages/admin/Branding";
+import { Design } from "../pages/admin/Design";
+import { TermsOfUse } from "../pages/admin/TermsOfUse";
+import { PrivacyPolicy } from "../pages/admin/PrivacyPolicy";
+import { ProtectedRoute } from "./ProtectedRoute";
+import { Cart } from "../pages/user/Cart";
+import { PaymentSuccess } from "../pages/user/PaymentSuccess";
 
 
-export const router = createBrowserRouter([
+export const Router = createBrowserRouter([
     {
       path: "",
       element: <UserLayout/>,
@@ -29,10 +35,7 @@ export const router = createBrowserRouter([
           path: "about",
           element: <About/>
         },
-        {
-          path: "profile",
-          element: <ProfilePage/>
-        },
+        
         {
           path: "contact",
           element: <Contact/>
@@ -58,19 +61,47 @@ export const router = createBrowserRouter([
           element: <ProductDetailsPage/>
         },
         {
-          path: "cart",
-          element: <Cart/>
+          path: "branding",
+          element: <Branding/>
         },
         {
-          path: "order",
-          element: <Order/>
+          path: "design",
+          element: <Design/>
         },
         {
-          path: "checkout",
-          element: <Checkout/>
+          path: "termsofuse",
+          element: <TermsOfUse/>
         },
-        
-      ]
-    },
-    
+        {
+          path: "privacypolicy",
+          element: <PrivacyPolicy/>
+        },
+        {
+          element: <ProtectedRoute />,
+          path: "",
+          children: [
+            {
+              path: "/profile",
+              element: <ProfilePage />
+            },
+            {
+              path: "/cart",
+              element: <Cart />
+            },
+            {
+              path: "order",
+              element: <Order />
+            },
+            {
+              path: "checkout",
+              element: <Checkout />
+            },
+            {
+              path: "/user/payment/success",
+              element: <PaymentSuccess />
+            },
+          ],
+        }
+        ],
+      },     
   ]);

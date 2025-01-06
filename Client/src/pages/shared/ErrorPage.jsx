@@ -22,7 +22,7 @@ export const ErrorPage = ({role= "user"}) => {
        <h1>404 Page Not Found !</h1>
        <br/>
 
-       <button className='btn btn-error' onClick={() => navigate("/")}>Return To Home</button> 
+       <button className='btn btn-error' onClick={handleNavigation}>Return To Home</button> 
     </div>
   )
 }
