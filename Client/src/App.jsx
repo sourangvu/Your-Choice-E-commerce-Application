@@ -8,7 +8,7 @@ function App (){
 
   return (
     <>
-    <RouterProvider router = { Router }/>
+    <RouterProvider Router = { Router }/>
 
      <Toaster/>
      
