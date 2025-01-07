@@ -6,20 +6,16 @@ const cors = require('cors')
 require('dotenv').config()
 
 
-
-
-
 const app = express()
 
 connectDB()
-
 app.use(express.json())
 app.use(cors({origin :["http://localhost:5173","https://your-choice-e-commerce-application-client.vercel.app"], credentials:true, methods:["GET","POST","PUT", "DELETE" ] }));
 app.use(cookieParser())
 
 app.get("/",(req,res,next)=>{
     res.json("Hello World")
-})
+});
 
 
 app.use("/api", apiRouter)
